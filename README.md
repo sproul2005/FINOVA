@@ -1,6 +1,6 @@
-# 🚀 FinanceTracker - Industrial-Grade Personal Finance Management
+# 🚀 FINOVA - Industrial-Grade Personal Finance Management
 
-FinanceTracker is a high-performance, secure, and intuitive web application designed for comprehensive personal financial management. Built with the MERN stack (MongoDB, Express, React, Node.js), it provides real-time financial insights, budget tracking, and transaction management with a premium dark-themed interface.
+FINOVA is a high-performance, secure, and intuitive web application designed for comprehensive personal financial management. Built with the MERN stack (MongoDB, Express, React, Node.js), it provides real-time financial insights, budget tracking, and transaction management with a premium dark-themed interface.
 
 ## ✨ Key Features
 
@@ -24,12 +24,12 @@ FinanceTracker is a high-performance, secure, and intuitive web application desi
 
 | Component | Technology | Role |
 | :--- | :--- | :--- |
-| **Frontend** | React 19, Vite | Fast UI/UX rendering & bundling |
+| **Frontend** | React 18, Vite | Fast UI/UX rendering & bundling |
 | **Routing** | React Router 7 | Client-side navigation |
 | **State** | React Context API | Global state for Auth |
 | **Styling** | Vanilla CSS3 | Custom high-performance dark theme |
 | **Icons** | Lucide React | Premium vector iconography |
-| **Backend** | Node.js, Express 5 | High-concurrency API layer |
+| **Backend** | Node.js, Express | High-concurrency API layer |
 | **Database** | MongoDB, Mongoose | NoSQL persistence with schema validation |
 | **Security** | JWT, bcryptjs | Industry-standard encryption |
 
@@ -37,22 +37,29 @@ FinanceTracker is a high-performance, secure, and intuitive web application desi
 
 ### 📂 Project Structure
 ```text
-FinanceTracker/
-├── client/                # React Frontend
+FINOVA/
+├── client/               # React Frontend
 │   ├── src/
-│   │   ├── api/          # Axios instance & interceptors
+│   │   ├── assets/       # Static assets like images
 │   │   ├── components/   # Reusable UI components
 │   │   ├── context/      # AuthContext provider
-│   │   ├── pages/        # Main route views
-│   │   └── styles/       # Modular CSS system
+│   │   ├── pages/        # Route views (Dashboard, Budgets, Transactions, Login, Register)
+│   │   ├── utils/        # Utility functions
+│   │   ├── App.jsx       # Main application component
+│   │   ├── main.jsx      # React entry point
+│   │   └── index.css     # Global styles
 │   └── package.json
-├── server/                # Express Backend
-│   ├── middleware/       # JWT verification
+├── server/               # Express Backend
+│   ├── config/           # Database configuration
+│   ├── controllers/      # Route handlers (auth, budget, transaction)
+│   ├── middleware/       # JWT verification middleware
 │   ├── models/           # Mongoose schemas (User, Budget, Transaction)
 │   ├── routes/           # API Endpoints
-│   ├── index.js          # Server entry point
+│   ├── utils/            # Utility functions
+│   ├── server.js         # Server entry point
+│   ├── seed.js           # Database seeding script
 │   └── package.json
-└── README.md              # Documentation
+└── README.md             # Documentation
 ```
 
 ## 🚦 API Reference
@@ -87,8 +94,8 @@ FinanceTracker/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/AssignmentHyscalar.git
-cd AssignmentHyscalar
+git clone https://github.com/sproul2005/FINOVA.git
+cd FINOVA
 ```
 
 ### 2. Backend Configuration
@@ -105,9 +112,9 @@ MONGODB_URI=your_mongodb_uri   # Your MongoDB Connection String
 JWT_SECRET=your_super_secret   # A secure string for JWT signing
 ```
 
-Start the backend server:
+Start the backend server (using nodemon for development):
 ```bash
-npm start # Starts the server using nodemon
+npm run dev
 ```
 The server will be running at `http://localhost:5000`
 
@@ -127,7 +134,7 @@ The application will be accessible at `http://localhost:5173`
 ## 🏃 Quick Start (Development)
 To run the full-stack application, ensure you have two terminal windows open:
 
-- **Terminal 1**: Running the backend (`cd server && npm start`)
+- **Terminal 1**: Running the backend (`cd server && npm run dev`)
 - **Terminal 2**: Running the frontend (`cd client && npm run dev`)
 
 ## 🧪 Testing
@@ -136,18 +143,3 @@ To run the full-stack application, ensure you have two terminal windows open:
 - **Auth Flow**: Register -> Verify "Success" redirect -> Login -> Verify token storage in Developer Tools (Local Storage).
 - **Data Integrity**: Add transaction -> Check History -> Verify Dashboard counters update instantly.
 - **Cross-Month Budgets**: Set budget for Feb -> Add Feb transaction -> Set budget for March -> Verify isolation of data.
-
-## 📸 Proof of Work
-
-- **🔐 Secure Authentication**
-  *(Authentication screenshot here)*
-- **📈 Dashboard Summary**
-  *(Dashboard screenshot here)*
-- **📂 Empty State (Initial View)**
-  *(Dashboard Empty screenshot here)*
-- **📊 Budget Monitoring**
-  *(Budgets screenshot here)*
-- **📂 Transaction History**
-  *(History screenshot here)*
-- **🛠️ Add Transaction Modal**
-  *(Modal screenshot here)*
