@@ -1,55 +1,153 @@
-# Personal Finance Management Web Application
+# 🚀 FinanceTracker - Industrial-Grade Personal Finance Management
 
-Full-stack MERN application for managing personal finances.
+FinanceTracker is a high-performance, secure, and intuitive web application designed for comprehensive personal financial management. Built with the MERN stack (MongoDB, Express, React, Node.js), it provides real-time financial insights, budget tracking, and transaction management with a premium dark-themed interface.
 
-## Project Structure
+## ✨ Key Features
 
-- `server/` - Node.js + Express backend
-- `client/` - React + Vite frontend
+### 🔐 Advanced Security & Auth
+- **JWT-based Authentication:** Secure stateless authentication using JSON Web Tokens.
+- **Client-Side Persistence:** Token management via `localStorage` for seamless sessions.
+- **Protected Routing:** Role-based access control for secure dashboard interactions.
+- **Secure Hashing:** Multi-layer password hashing using `bcryptjs`.
 
-## Prerequisites
+### 💰 Transaction Management
+- **Universal Tracking:** Record Income and Expenses with precision.
+- **Recurring Logic:** Support for Monthly and Weekly automated transaction tagging.
+- **Filtering & Search:** Industrial search engine for transaction lookup by description, category, and date range.
 
-- Node.js installed
-- MongoDB installed locally or MongoDB Atlas URI (update `server/.env`)
+### 📊 Financial Insights
+- **Savings Analytics:** Real-time calculation of "Savings Rate" to measure financial health.
+- **Dynamic Dashboard:** Balanced overview of Total Income, Expenses, and current Net Worth.
+- **Budget Guardrails:** Visual progress bars per category with over-budget alerts.
 
-## Setup Instructions
+## 🛠️ Tech Stack
 
-### 1. Backend Setup
+| Component | Technology | Role |
+| :--- | :--- | :--- |
+| **Frontend** | React 19, Vite | Fast UI/UX rendering & bundling |
+| **Routing** | React Router 7 | Client-side navigation |
+| **State** | React Context API | Global state for Auth |
+| **Styling** | Vanilla CSS3 | Custom high-performance dark theme |
+| **Icons** | Lucide React | Premium vector iconography |
+| **Backend** | Node.js, Express 5 | High-concurrency API layer |
+| **Database** | MongoDB, Mongoose | NoSQL persistence with schema validation |
+| **Security** | JWT, bcryptjs | Industry-standard encryption |
 
-1. Open a terminal and navigate to the `server` directory:
-   ```bash
-   cd server
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the backend development server:
-   ```bash
-   npm run dev
-   ```
-   *The API will run on http://localhost:5000*
+## 🏗️ System Architecture
 
-### 2. Frontend Setup
+### 📂 Project Structure
+```text
+FinanceTracker/
+├── client/                # React Frontend
+│   ├── src/
+│   │   ├── api/          # Axios instance & interceptors
+│   │   ├── components/   # Reusable UI components
+│   │   ├── context/      # AuthContext provider
+│   │   ├── pages/        # Main route views
+│   │   └── styles/       # Modular CSS system
+│   └── package.json
+├── server/                # Express Backend
+│   ├── middleware/       # JWT verification
+│   ├── models/           # Mongoose schemas (User, Budget, Transaction)
+│   ├── routes/           # API Endpoints
+│   ├── index.js          # Server entry point
+│   └── package.json
+└── README.md              # Documentation
+```
 
-1. Open a new terminal and navigate to the `client` directory:
-   ```bash
-   cd client
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the frontend development server:
-   ```bash
-   npm run dev
-   ```
-   *The React app will open in your default browser (usually http://localhost:5173).*
+## 🚦 API Reference
 
-## Features Implemented
+### Authentication
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `POST` | `/api/auth/register` | Create new user account |
+| `POST` | `/api/auth/login` | Authenticate & receive JWT |
+| `GET` | `/api/auth/check` | Verify token & get user profile |
 
-- **Authentication**: JWT, bcrypt, Register, Login
-- **Transactions**: Add, edit, delete, and list income/expense transactions.
-- **Budgets**: Set monthly limits for different categories.
-- **Dashboard**: Visual summaries with MongoDB aggregation (total balance, total income, total spent, and expense breakdown by category).
-- **Responsive UI**: Modern SaaS fintech design.
+### Transactions
+| Method | Endpoint | Description | Query Params |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/transactions` | Fetch all logs | `type`, `category`, `startDate`, `endDate`, `search` |
+| `POST` | `/api/transactions` | Add new entry | N/A |
+| `DELETE` | `/api/transactions/:id` | Remove entry | N/A |
+
+### Budgets
+| Method | Endpoint | Description | Query Params |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/budgets` | Fetch monthly goals | `month`, `year` |
+| `POST` | `/api/budgets` | Set/Update budget | N/A |
+
+## ⚙️ Installation & Setup
+
+### Prerequisites
+- **Node.js**: v18.0.0 or higher
+- **NPM**: v9.0.0 or higher
+- **MongoDB**: A running instance (Local or Atlas)
+- **Git**: For version control
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/yourusername/AssignmentHyscalar.git
+cd AssignmentHyscalar
+```
+
+### 2. Backend Configuration
+Navigate to the `server` directory and install dependencies:
+```bash
+cd server
+npm install
+```
+
+Create a `.env` file in the `server` directory and configure the following:
+```env
+PORT=5000                     # Port for the Express server
+MONGODB_URI=your_mongodb_uri   # Your MongoDB Connection String
+JWT_SECRET=your_super_secret   # A secure string for JWT signing
+```
+
+Start the backend server:
+```bash
+npm start # Starts the server using nodemon
+```
+The server will be running at `http://localhost:5000`
+
+### 3. Frontend Configuration
+Navigate to the `client` directory and install dependencies:
+```bash
+cd ../client
+npm install
+```
+
+Start the development server:
+```bash
+npm run dev
+```
+The application will be accessible at `http://localhost:5173`
+
+## 🏃 Quick Start (Development)
+To run the full-stack application, ensure you have two terminal windows open:
+
+- **Terminal 1**: Running the backend (`cd server && npm start`)
+- **Terminal 2**: Running the frontend (`cd client && npm run dev`)
+
+## 🧪 Testing
+
+### Manual Testing Procedure
+- **Auth Flow**: Register -> Verify "Success" redirect -> Login -> Verify token storage in Developer Tools (Local Storage).
+- **Data Integrity**: Add transaction -> Check History -> Verify Dashboard counters update instantly.
+- **Cross-Month Budgets**: Set budget for Feb -> Add Feb transaction -> Set budget for March -> Verify isolation of data.
+
+## 📸 Proof of Work
+
+- **🔐 Secure Authentication**
+  *(Authentication screenshot here)*
+- **📈 Dashboard Summary**
+  *(Dashboard screenshot here)*
+- **📂 Empty State (Initial View)**
+  *(Dashboard Empty screenshot here)*
+- **📊 Budget Monitoring**
+  *(Budgets screenshot here)*
+- **📂 Transaction History**
+  *(History screenshot here)*
+- **🛠️ Add Transaction Modal**
+  *(Modal screenshot here)*
