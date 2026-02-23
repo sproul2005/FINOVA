@@ -131,15 +131,16 @@ npm run dev
 ```
 The application will be accessible at `http://localhost:5173`
 
-## 🏃 Quick Start (Development)
-To run the full-stack application, ensure you have two terminal windows open:
+## 🏃 Getting the App Running
 
-- **Terminal 1**: Running the backend (`cd server && npm run dev`)
-- **Terminal 2**: Running the frontend (`cd client && npm run dev`)
+To launch both the frontend and backend environments simultaneously, you'll need to open two separate terminal windows or tabs:
 
-## 🧪 Testing
+- **Terminal 1 (Backend Server)**: Navigate to the server folder and start the API `cd server && npm run dev`
+- **Terminal 2 (Frontend Interface)**: Navigate to the client folder and start the React app `cd client && npm run dev`
 
-### Manual Testing Procedure
-- **Auth Flow**: Register -> Verify "Success" redirect -> Login -> Verify token storage in Developer Tools (Local Storage).
-- **Data Integrity**: Add transaction -> Check History -> Verify Dashboard counters update instantly.
-- **Cross-Month Budgets**: Set budget for Feb -> Add Feb transaction -> Set budget for March -> Verify isolation of data.
+## 🧪 Validating the Platform
+
+### Recommended Testing Steps
+- **User Authentication Workflow**: Create a new account through the Register page -> confirm the successful redirect to the login screen -> authenticate with the new credentials -> check your browser's Local Storage to ensure the session token is securely saved.
+- **Transaction Accuracy**: Log a new income or expense -> navigate to the History view to verify its presence -> check the main Dashboard to ensure the total balances reflect the new entry instantly.
+- **Budget Segregation**: Define a spending limit for the current month -> log an expense against it -> define a different limit for the following month -> ensure the new month's budget starts fresh and does not mix with the previous month's data.
