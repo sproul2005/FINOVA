@@ -20,21 +20,22 @@ const Layout = () => {
                 </div>
                 <nav style={{ padding: '1rem 0', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                     <NavLink
-                        to="/"
+                        to="/maind"
+                        end
                         className={({ isActive }) => `btn ${isActive ? 'btn-primary' : ''}`}
                         style={({ isActive }) => ({ borderRadius: 0, padding: '1rem 1.5rem', justifyContent: 'flex-start', boxShadow: 'none', color: isActive ? 'white' : 'var(--text-muted)' })}
                     >
                         Dashboard
                     </NavLink>
                     <NavLink
-                        to="/transactions"
+                        to="/maind/transactions"
                         className={({ isActive }) => `btn ${isActive ? 'btn-primary' : ''}`}
                         style={({ isActive }) => ({ borderRadius: 0, padding: '1rem 1.5rem', justifyContent: 'flex-start', boxShadow: 'none', color: isActive ? 'white' : 'var(--text-muted)' })}
                     >
                         Transactions
                     </NavLink>
                     <NavLink
-                        to="/budgets"
+                        to="/maind/budgets"
                         className={({ isActive }) => `btn ${isActive ? 'btn-primary' : ''}`}
                         style={({ isActive }) => ({ borderRadius: 0, padding: '1rem 1.5rem', justifyContent: 'flex-start', boxShadow: 'none', color: isActive ? 'white' : 'var(--text-muted)' })}
                     >

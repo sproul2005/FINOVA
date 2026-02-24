@@ -62,7 +62,20 @@ FINOVA/
 └── README.md             # Documentation
 ```
 
-## 🚦 API Reference
+## �️ Frontend Images
+
+Here is a glimpse of the FINOVA application in action:
+
+<div align="center">
+  <img src="screenshots/dashboard.png" alt="Dashboard View" width="48%">
+  <img src="screenshots/transactions.png" alt="Transaction History" width="48%">
+</div>
+<div align="center">
+  <img src="screenshots/budgets.png" alt="Budget Management" width="48%">
+  <img src="screenshots/login.png" alt="Login Screen" width="48%">
+</div>
+
+## �🚦 API Reference
 
 ### Authentication
 | Method | Endpoint | Description |
@@ -144,3 +157,19 @@ To launch both the frontend and backend environments simultaneously, you'll need
 - **User Authentication Workflow**: Create a new account through the Register page -> confirm the successful redirect to the login screen -> authenticate with the new credentials -> check your browser's Local Storage to ensure the session token is securely saved.
 - **Transaction Accuracy**: Log a new income or expense -> navigate to the History view to verify its presence -> check the main Dashboard to ensure the total balances reflect the new entry instantly.
 - **Budget Segregation**: Define a spending limit for the current month -> log an expense against it -> define a different limit for the following month -> ensure the new month's budget starts fresh and does not mix with the previous month's data.
+
+---
+
+## 🖼️ Frontend Images
+
+Here is a glimpse of the FINOVA application in action:
+
+<div align="center">
+  <img src="screenshots/dashboard.png" alt="Dashboard View" width="48%">
+  <img src="screenshots/transactions.png" alt="Transaction History" width="48%">
+</div>
+<div align="center">
+  <img src="screenshots/budgets.png" alt="Budget Management" width="48%">
+  <img src="screenshots/login.png" alt="Login Screen" width="48%">
+</div>
+

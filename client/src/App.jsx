@@ -24,10 +24,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        <Route path="/" element={<PrivateRoute><Layout /></PrivateRoute>}>
+        <Route path="/maind" element={<PrivateRoute><Layout /></PrivateRoute>}>
           <Route index element={<Dashboard />} />
-          <Route path="transactions" element={<Transactions />} />
-          <Route path="budgets" element={<Budgets />} />
+          <Route path="/maind/transactions" element={<Transactions />} />
+          <Route path="/maind/budgets" element={<Budgets />} />
         </Route>
       </Routes>
     </Router>

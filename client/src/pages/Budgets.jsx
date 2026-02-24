@@ -99,8 +99,8 @@ const Budgets = () => {
                 </div>
 
                 {/* Budgets Progress */}
-                <div className="card">
-                    <h2 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '1.5rem' }}>Spending vs. Limits</h2>
+                <div className="card" style={{ height: 'calc(100vh - 140px)', display: 'flex', flexDirection: 'column' }}>
+                    <h2 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '1.5rem', flexShrink: 0 }}>Spending vs. Limits</h2>
 
                     {budgets.length === 0 ? (
                         <div style={{ textAlign: 'center', padding: '3rem 0', color: 'var(--text-muted)' }}>
@@ -108,7 +108,7 @@ const Budgets = () => {
                             <p>No budgets set for this month.</p>
                         </div>
                     ) : (
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', overflowY: 'auto', flex: 1, paddingRight: '0.5rem' }}>
                             {budgets.map(b => {
                                 const expense = expenseBreakdown.find(exp => exp._id.toLowerCase() === b.category.toLowerCase());
                                 const spent = expense ? expense.totalAmount : 0;
